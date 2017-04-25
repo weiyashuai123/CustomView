@@ -1,11 +1,14 @@
 package com.tyustwys.customview.Activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Path;
 import android.graphics.PointF;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.Button;
 
 import com.eftimoff.androipathview.PathView;
 import com.tyustwys.customview.R;
@@ -24,6 +27,14 @@ public class Main4Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main4);
         KeKe ke = (KeKe) findViewById(R.id.keke);
         PathView pathView = (PathView) findViewById(R.id.pathView);
+
+        Button btn  = (Button) findViewById(R.id.button);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Main4Activity.this,Main5Activity.class));
+            }
+        });
         MyPath path = new MyPath();
         path.setBaseValue(30);
         path.moveTo(1,1);
